@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer components{
+    .services-container{
+
+    }
+    
+}
+
+@layer base{
+    .services-container h4{
+        @apply text-[14px] font-medium text-center
+    }
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.service-card .p-6 {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:not(.flex-1) .p-6 {
+    opacity: 0;
+}

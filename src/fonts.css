@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Golco';
+    src: url('./assets/Golco/golco-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Golco';
+    src: url('./assets/Golco/golco-italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
