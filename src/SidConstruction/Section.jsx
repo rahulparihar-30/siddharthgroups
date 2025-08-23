@@ -56,7 +56,7 @@ const Section = (props) => {
         {props.tagline}
       </h1>
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-  {props.services.map((service, index) => (
+  {props.services.slice(0,3).map((service, index) => (
     <div key={index}>{serviceCard(service)}</div>
   ))}
 </div>
