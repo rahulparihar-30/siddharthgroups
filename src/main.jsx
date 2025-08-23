@@ -4,8 +4,10 @@ import './styling/index.css'
 import App from './App.jsx'
 import './fonts.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import MainSid from './SidConstruction/MainSid.jsx'
+import Main from './SidConstruction/Main.jsx'
 import { Home } from 'lucide-react'
+import Projects from './SidConstruction/Projects.jsx'
+import AppHome from './SidConstruction/AppHome.jsx'
 
 
 const router = createBrowserRouter([{
@@ -13,7 +15,16 @@ const router = createBrowserRouter([{
   element:<App/>,
 },{
   path:"/sid-construction",
-  element:<MainSid/>
+  element:<Main/>,
+  children:[{
+    path:"",
+    element:<AppHome/>
+  },
+    {
+      path:"projects",
+      element:<Projects/>
+    }
+  ]
 }])
 
 createRoot(document.getElementById('root')).render(

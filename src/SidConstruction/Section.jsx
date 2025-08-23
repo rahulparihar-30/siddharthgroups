@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Section = (props) => {
-  const serviceCard = (service) => {
+const serviceCard = (service) => {
     return (
       <div className="card relative w-[300px] h-[400px] border-2 border-amber-600 bg-black overflow-hidden">
         <img
@@ -39,6 +38,8 @@ const Section = (props) => {
       </div>
     );
   };
+const Section = (props) => {
+  
 
   return (
     <section id={props.id} className="text-blue-950 lg:mx-30 my-10 pb-10 text-center space-y-5">
@@ -59,9 +60,12 @@ const Section = (props) => {
     <div key={index}>{serviceCard(service)}</div>
   ))}
 </div>
-
+{
+    props.kind =="project" && <NavLink to="./projects" className="bg-[#fba700c6] hover:bg-amber-500 p-2 rounded border-2 border-amber-500 text-center text-white font-bold">Explore More</NavLink>
+  }
     </section>
   );
 };
 
 export default Section;
+export {serviceCard};

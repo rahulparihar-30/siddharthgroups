@@ -9,16 +9,16 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-amber-500 text-white pt-10 pb-3">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center sm:text-left">
+    <footer className="bg-amber-500 text-white pt-10 pb-3 ">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 text-left sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:text-center">
         {/* Company Info */}
         <div>
           <img
             src="/logo.png"
             alt="Siddharth Group Logo"
-            className="h-10 mx-auto sm:mx-0 mb-4"
+            className="h-10 mb-4"
           />
-          <p className="text-sm">
+          <p className="text-sm md:text-left">
             S. No, AP81, 83, N Main Rd, near Hard Rock Cafe, Koregaon Park
             Annexe, Mundhwa, Pune, Maharashtra 411036
           </p>
@@ -27,7 +27,7 @@ export default function Footer() {
             <p className="flex justify-center sm:justify-start items-center gap-2">
               <Mail size={16} /> sidharthgroups@gmail.com
             </p>
-            <p className="flex justify-center sm:justify-start items-center gap-2">
+            <p className="flex  sm:justify-start items-center gap-2">
               <Phone size={16} /> +91-88053608977
             </p>
           </div>

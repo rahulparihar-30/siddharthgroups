@@ -23,22 +23,74 @@ export const services = [
   },
 ];
 
-export const projects = [{
-    id:1,
-    name:"Skyline Heights",
-    location:"Pune,Maharashtra",
-    image:"public/construction/villa-borghese-537944_1280.jpg"
-},{
-  id:2,
-    name:"Ferns",
-    location:"Bengaluru, Karnataka",
-    image:"public/construction/villa-3454616_1280.jpg"
-},{
-  id:3,
-    name:"Green Meadows",
-    location:"Mumbai, Maharashtra",
-    image:"public/construction/villa-7303286_1280.jpg"
-}]
+export const projects = [
+  {
+    id: 1,
+    name: "Skyline Heights",
+    location: "Pune, Maharashtra",
+    image: "/construction/villa-borghese-537944_1280.jpg", // ✅ your local image
+    category: "Residential",
+  },
+  {
+    id: 2,
+    name: "Ferns",
+    location: "Bengaluru, Karnataka",
+    image: "/construction/villa-3454616_1280.jpg", // ✅ your local image
+    category: "Commercial",
+  },
+  {
+    id: 3,
+    name: "Green Meadows",
+    location: "Mumbai, Maharashtra",
+    image: "/construction/villa-7303286_1280.jpg", // ✅ your local image
+    category: "Residential",
+  },
+  {
+    id: 4,
+    name: "Tech Park One",
+    location: "Hyderabad, Telangana",
+    image: "https://picsum.photos/600/400?random=4", // 🖼 sample placeholder
+    category: "Commercial",
+  },
+  {
+    id: 5,
+    name: "Sunrise Villas",
+    location: "Chennai, Tamil Nadu",
+    image: "/construction/villa-2342131_1280.jpg", // ✅ if you have it, else fallback below
+    // image: "https://picsum.photos/600/400?random=5", // fallback placeholder
+    category: "Residential",
+  },
+  {
+    id: 6,
+    name: "MegaMall Central",
+    location: "Delhi NCR",
+    image: "https://picsum.photos/600/400?random=6", // 🖼 sample placeholder
+    category: "Commercial",
+  },
+  {
+    id: 7,
+    name: "Steel Plant Expansion",
+    location: "Bhilai, Chhattisgarh",
+    image: "https://picsum.photos/600/400?random=7", // 🖼 sample placeholder
+    category: "Industrial",
+  },
+  {
+    id: 8,
+    name: "Metro Rail Project",
+    location: "Lucknow, Uttar Pradesh",
+    image: "https://picsum.photos/600/400?random=8", // 🖼 sample placeholder
+    category: "Infrastructure",
+  },
+  {
+    id: 9,
+    name: "Harbor Bridge",
+    location: "Kochi, Kerala",
+    image: "https://picsum.photos/600/400?random=9", // 🖼 sample placeholder
+    category: "Infrastructure",
+  },
+];
+
+
 
 export const reasons = [
   {

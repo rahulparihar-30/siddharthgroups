@@ -19,4 +19,9 @@ body{
     .section-headings{
         @apply flex-col text-center
     }
+    #test-carousel {
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0%, black 15%,black 80%, transparent 100%);
+}
+
 }

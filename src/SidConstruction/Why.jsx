@@ -7,7 +7,7 @@ const Why = ()=>{
         className="text-1">Why Us</h3>
         <h1  className="tagline text-amber-500"
         style={{ fontFamily: "Golco" }}>Quality, Commitment, and Excellence in Every Step.</h1>
-        <div className="md:grid md:grid-cols-2 my-10 justify-center items-center space-y-5 p-10">
+        <div className="md:place-items-center md:grid md:grid-cols-2 my-10 justify-center items-center space-y-5 p-10">
             {
                 reasons.map((reason) => {
                     const Logo = reason.logo
