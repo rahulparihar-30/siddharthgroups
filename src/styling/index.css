@@ -14,7 +14,7 @@ body{
 
 @layer base{
     .tagline{
-        @apply text-4xl 
+        @apply md:text-4xl text-xl text-center text-amber-500
     }
     .section-headings{
         @apply flex-col text-center
