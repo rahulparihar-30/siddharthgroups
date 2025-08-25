@@ -58,10 +58,10 @@ const Services = () => {
 
   return (
     <div className="min-h-screen text-center flex flex-col space-y-5 mt-10 px-4" id="services">
-      <h4 className="text-xs uppercase tracking-wide" style={{ fontFamily: "Golco" }}>
+      <h4  style={{ fontFamily: "Golco" }}>
         Services
       </h4>
-      <h2 className="tagline text-lg sm:text-xl md:text-2xl">
+      <h2 className="tagline">
         Tailored solutions for every business
       </h2>
 

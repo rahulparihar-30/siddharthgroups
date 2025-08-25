@@ -7,7 +7,7 @@ const About = () => {
       <h4 className="text-[10px] uppercase tracking-wide" style={{ fontFamily: "Golco" }}>
         About Us
       </h4>
-      <h2 className="tagline text-lg sm:text-xl md:text-2xl">
+      <h2 className="tagline">
         We Build. We Grow. We Prosper
       </h2>
       <span className="text-2xl sm:text-3xl" style={{ fontFamily: "Golco" }}>

@@ -28,13 +28,13 @@ const Testimonial = ()=>{
         className="text-1 text-blue-900">Testimonials</h3>
         <h1  className="tagline text-amber-500"
         style={{ fontFamily: "Golco" }}>Stories of Trust, Success, and Partnership.</h1>
-        <div className="" id="test-carousel">
-            <div className="embla__container flex gap-6 embla overflow-hidden" id="right">
+        <div className="overflow-hidden" id="test-carousel">
+            <div className=" flex gap-6" id="right">
             {
                 comments.map(comment=>card(comment))
             }
         </div>
-        <div className="embla__container flex gap-6 embla overflow-hidden" id="left">
+        <div className="flex gap-6" id="left">
             {
                 comments.map(comment=>card(comment))
             }
