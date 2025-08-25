@@ -36,13 +36,13 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(200px);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes move-left {
   0% {
-    transform: translateX(200px);
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
@@ -50,9 +50,9 @@ body {
 }
 
 #right{
-    animation: move-right 2s linear infinite ;
+    animation: move-right 15s linear infinite ;
 }
 
 #left{
-    animation: move-left 2s linear infinite ;
+    animation: move-left 15s linear infinite ;
 }
