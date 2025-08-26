@@ -23,6 +23,7 @@ const Team = () => {
           src={person.image}
           className="w-full h-full object-cover object-top aspect-square"
           alt={person.name}
+          loading="lazy"
         />
       </div>
       <h3 className="font-bold text-xl mt-2">{person.name}</h3>

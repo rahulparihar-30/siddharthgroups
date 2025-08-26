@@ -1,5 +1,6 @@
 import React from "react";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { NavLink } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -37,6 +38,7 @@ const Services = () => {
     return (
       <div className="bg-black relative rounded overflow-hidden hover:translate-y-2 transition-all duration-300">
         <img
+        loading="lazy"
           src={service.image}
           className="w-full h-56 sm:h-64 md:h-72 object-cover opacity-50"
           alt={service.name}
@@ -48,9 +50,9 @@ const Services = () => {
           <p className="text-gray-200 text-sm md:text-base line-clamp-3">
             {service.description}
           </p>
-          <button className="cursor-pointer flex items-center gap-1 hover:bg-[var(--secondary-color)] bg-[#073775bd] text-white text-sm md:text-base px-3 py-1 rounded border border-[var(--secondary-color)] w-fit">
+          <NavLink to={service.link} className="cursor-pointer flex items-center gap-1 hover:bg-[var(--secondary-color)] bg-[#073775bd] text-white text-sm md:text-base px-3 py-1 rounded border border-[var(--secondary-color)] w-fit">
             Explore <ArrowForwardIcon fontSize="small" />
-          </button>
+          </NavLink>
         </div>
       </div>
     );

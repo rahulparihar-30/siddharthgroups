@@ -19,6 +19,7 @@ const Testimonial = () => {
             src={testimonial.pic}
             className="w-[50px] h-[50px] rounded-full"
             alt="profile"
+            loading="lazy"
           />
           <div className="flex flex-col text-left">
             <span className="text-amber-500 text-xl font-bold">
@@ -32,7 +33,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="md:mx-30 text-center place-items-center space-y-5 mb-10">
+    <section className="md:mx-30  text-center place-items-center space-y-5 mb-10">
       <h3
         style={{ fontFamily: "Golco" }}
         className="text-blue-900 text-xl font-bold"
@@ -47,7 +48,7 @@ const Testimonial = () => {
       </h1>
 
       {/* Scrolling container */}
-      <div className="overflow-hidden relative w-full" id="test-carousel">
+      <div className="overflow-hidden relative w-full h-full" id="test-carousel">
         {/* Right scroll */}
         <div className="flex gap-6 flex-nowrap " id="left">
           {[...comments, ...comments].map((comment, i) => card(comment, i))}

@@ -22,7 +22,7 @@ const Projects = () => {
           src="/construction/skyscrapers.jpg"
           className="w-full h-full object-cover opacity-50"
           alt="Projects banner"
-          loading="lazy"
+          loading="eager"
         />
         <h3
           style={{ fontFamily: "Golco" }}

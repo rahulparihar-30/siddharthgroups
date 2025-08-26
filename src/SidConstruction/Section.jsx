@@ -5,6 +5,7 @@ const serviceCard = (service) => {
     return (
       <div className="card relative w-[300px] h-[400px] border-2 border-amber-600 bg-black overflow-hidden">
         <img
+        loading="lazy"
           src={service.image}
           className="w-full h-full opacity-40 object-cover"
         />
