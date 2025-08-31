@@ -13,6 +13,7 @@ const Home = ()=>{
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000); // 3 seconds
     return () => clearInterval(interval);
+    
   }, [images.length]);
 
     return(
@@ -29,7 +30,7 @@ const Home = ()=>{
                 <h1>One Stop Solution <span>for all your needs.</span></h1>
                 <ul className="services-labels">
                     {
-                        services.map((service => <li className={`service-label ${service == images[currentIndex]?"bg-[var(--secondary-color)] p-0.5":"bg-none"}`} id={service}>
+                        services.map((service => <li className={`service-label ${service == images[currentIndex]?"bg-[var(--secondary-color)] p-0.5":"bg-none"} font-bold`} id={service}>
                             {service}
                     </li>))
                     }

@@ -7,6 +7,8 @@ import Services from './Services';
 import About from './About';
 import Team from './Team';
 import Footer from './Footer';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 function App() {

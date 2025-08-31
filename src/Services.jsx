@@ -1,6 +1,6 @@
 import React from "react";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { NavLink } from "react-router-dom";
+import ServiceCard from "./ServiceCard";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -8,21 +8,21 @@ const Services = () => {
       name: "Construction",
       description:
         "From modern residences to large-scale commercial developments, we deliver structures that blend quality craftsmanship, innovative design, and uncompromising safety—built to inspire, empower, and endure.",
-      image: "/background-images/Construction.jpg",
+      image: "/pexels-rezwan-1216589.jpg",
       link: "/services/construction",
     },
     {
       name: "Agriculture",
       description:
         "We enable sustainable farming through smart irrigation, precision inputs, and supply-chain support—helping growers boost yield, reduce costs, and protect the environment.",
-      image: "/background-images/Agriculture1.jpg",
+      image: "/pexels-jk04-2933243.jpg",
       link: "/services/agriculture",
     },
     {
       name: "Finance",
       description:
         "Flexible financing, project funding, and advisory solutions designed to accelerate growth while managing risk—transparent terms, quick processing, and trusted guidance.",
-      image: "/background-images/Finance.jpg",
+      image: "/traxer-kM6QNrgo0YE-unsplash.jpg",
       link: "/services/finance",
     },
     {
@@ -32,48 +32,77 @@ const Services = () => {
       image: "/background-images/Franchise.jpg",
       link: "/services/franchise",
     },
+    {
+      name: "Films",
+      image: "/pexels-kyleloftusstudios-5642754.jpg",
+      link: "/services/films",
+    },
+    {
+      name: "Pharmaceutical",
+      image: "/pexels-anntarazevich-5910953.jpg",
+      link: "/pharmacy",
+    },
   ];
 
-  const serviceCard = (service) => {
-    return (
-      <div className="bg-black relative rounded overflow-hidden hover:translate-y-2 transition-all duration-300">
-        <img
-        loading="lazy"
-          src={service.image}
-          className="w-full h-56 sm:h-64 md:h-72 object-cover opacity-50"
-          alt={service.name}
-        />
-        <div className="text-left flex flex-col space-y-3 absolute bottom-4 left-4 right-4">
-          <h2 style={{ fontFamily: "Golco" }} className="text-white text-lg md:text-xl">
-            {service.name}
-          </h2>
-          <p className="text-gray-200 text-sm md:text-base line-clamp-3">
-            {service.description}
-          </p>
-          <NavLink to={service.link} className="cursor-pointer flex items-center gap-1 hover:bg-[var(--secondary-color)] bg-[#073775bd] text-white text-sm md:text-base px-3 py-1 rounded border border-[var(--secondary-color)] w-fit">
-            Explore <ArrowForwardIcon fontSize="small" />
-          </NavLink>
-        </div>
-      </div>
-    );
+  // Animation Variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // cards appear one after another
+      },
+    },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
-    <div className="min-h-screen text-center flex flex-col space-y-5 mt-10 px-4" id="services">
-      <h4  style={{ fontFamily: "Golco" }}>
-        Services
-      </h4>
-      <h2 className="tagline">
-        Tailored solutions for every business
-      </h2>
+    <section
+      id="services"
+      className="flex flex-col space-y-5 justify-center items-center"
+    >
+      <motion.h1
+        className="text-6xl"
+        style={{ fontFamily: '"Oswald", "sans-serif"', fontWeight: "bold" }}
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        What We Do
+      </motion.h1>
 
-      {/* Responsive Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 sm:mt-16">
+      <motion.p
+        className="text-xl text-center p-4 text-wrap"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        We bring together diverse, future-facing industries and communities to
+        co-create a positive world, where one enables the other to Rise.
+      </motion.p>
+
+      {/* Cards with stagger animation */}
+      <motion.div
+        id="services"
+        className="fade-in flex flex-col w-full p-5 lg:flex-row justify-center items-center gap-5 flex-wrap"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {services.map((service, index) => (
-          <div key={index}>{serviceCard(service)}</div>
+          <motion.div key={index} variants={card}>
+            <ServiceCard service={service} />
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 

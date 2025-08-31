@@ -9,7 +9,7 @@
 body {
   /* background-color: var(--primary-color); */
   color: #fff;
-  background-image: linear-gradient(#1a1f36, #101010);
+  background-image: linear-gradient(#1A1F36,#151B35);
 }
 
 @layer base {
@@ -55,4 +55,29 @@ body {
 
 #left{
     animation: move-left 15s linear infinite ;
+}
+
+.tagline{
+  font-family: "Oswald", "sans-serif";
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* optional: adds a slight slide effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0; /* start hidden */
+  animation: fadeIn 0.8s ease-out forwards; 
+}
+
+
+@theme{
+  --font-oswald: 'Oswald', sans-serif;
 }
