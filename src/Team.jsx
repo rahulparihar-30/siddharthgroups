@@ -2,156 +2,139 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import useMediaQuery from "./useMediaQuery";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Team = () => {
-  const sliderRef = useRef(null);
+  const desktopSliderRef = useRef(null);
+  const mobileSliderRef = useRef(null);
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   const persons = [
-    {
-      name: "Lana Steiner",
-      designation: "Chief Operating Officier",
-      image: "/team/p4.jpg",
-    },
+    { name: "Lana Steiner", designation: "Chief Operating Officer", image: "/team/p4.jpg" },
     { name: "Mia Ward", designation: "Founder & CEO", image: "/team/p2.jpg" },
     { name: "Lana Ray", designation: "Co-founder", image: "/team/p3.jpg" },
-    {
-      name: "Justin Rose",
-      designation: "Co-founder and CFO",
-      image: "/team/p1.jpg",
-    },
-    {
-      name: "Lana Steiner",
-      designation: "Chief Operating Officier",
-      image: "/team/p4.jpg",
-    },
+    { name: "Justin Rose", designation: "Co-founder and CFO", image: "/team/p1.jpg" },
+    { name: "Lana Steiner", designation: "Chief Operating Officer", image: "/team/p4.jpg" },
     { name: "Mia Ward", designation: "Founder & CEO", image: "/team/p2.jpg" },
   ];
 
-  // Animation variants
-  const cardVariant = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
-  const People = (person, idx) => (
-    <motion.div
-      variants={cardVariant}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="group flex flex-col text-center lg:text-left w-[150px] md:w-[300px] md:h-fit h-[350px] mx-auto bg-[var(--secondary-color)]"
+  const PersonCard = (person, idx) => (
+    <div
+      key={idx}
+      className="group flex flex-col items-center rounded-2xl shadow-lg overflow-hidden 
+                 bg-white dark:bg-gray-900 hover:shadow-2xl transition-all duration-500 
+                 w-full max-w-[300px] mx-auto"
     >
-      {/* Image section */}
-      <div className="img-container w-full flex-1 overflow-hidden">
-        <motion.img
+      <div className="relative w-full h-60 md:h-72 overflow-hidden">
+        <img
           src={person.image}
-          className="group-hover:sepia-50 group-hover:scale-110 w-full h-full md:h-[400px] object-cover object-top aspect-square transition-all duration-500"
           alt={person.name}
           loading="lazy"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
+          className="w-full h-full object-cover object-top transform transition-transform duration-500 group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+          <span className="text-white text-sm md:text-base font-semibold text-center px-2">
+            {person.designation}
+          </span>
+        </div>
       </div>
-
-      {/* Text section */}
-      <div className="flex flex-col justify-between p-2 flex-none">
+      <div className="p-4 w-full text-center overflow-hidden">
         <h3
-          className="font-bold text-lg md:text-3xl truncate"
+          className="font-bold text-lg md:text-xl text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors truncate"
           style={{ fontFamily: '"Oswald", "sans-serif"' }}
         >
           {person.name}
         </h3>
-        <span className="italic text-gray-400 text-sm md:text-xl line-clamp-2 ">
+        <p className="italic text-gray-500 dark:text-gray-400 text-sm md:text-base mt-1 line-clamp-2">
           {person.designation}
-        </span>
+        </p>
       </div>
-    </motion.div>
+    </div>
   );
 
-  const settings = {
+  // Desktop/Tablet settings (clean slide only)
+  const desktopSettings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 400, // smaller = snappier
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     arrows: false,
+    cssEase: "linear", // removes easing bounce
+    fade: false, // disable fade animation
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+    ],
+  };
+
+  // Mobile settings (autoplay clean slide)
+  const mobileSettings = {
+    dots: true,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    fade: false,
   };
 
   return (
-    <div className="team-container section-headings space-y-5 mb-5">
-      {/* Heading */}
-      <motion.h1
-        className="text-6xl"
-        style={{ fontFamily: '"Oswald", "sans-serif"' }}
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
+    <section className="py-5 px-4 md:px-12 lg:px-20 flex flex-col justify-center">
+      <h1 className="text-3xl md:text-5xl text-center font-oswald font-bold text-blue-800 mb-4">
         Meet Our Team
-      </motion.h1>
+      </h1>
 
-      {/* Subtitle */}
-      <motion.p
-        className="text-xl text-center p-4 text-wrap font-sans"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        We bring together diverse, future-facing industries and communities to
-        co-create a positive world, where one enables the other to Rise.
-      </motion.p>
+      <p className="text-lg md:text-xl text-center max-w-3xl mx-auto mb-10">
+        We bring together diverse, future-facing industries and communities to co-create a positive world, where one enables the other to Rise.
+      </p>
 
-      {/* Slider */}
-      <div className="relative w-full lg:max-w-4xl mx-auto">
-        <Slider
-          ref={sliderRef}
-          {...settings}
-          customPaging={() => (
-            <div className="mt-5 w-2 h-2 bg-white rounded-full"></div>
-          )}
-        >
-          {persons.map((person, idx) => (
-            <div key={idx}>{People(person, idx)}</div>
+      {isMobile ? (
+        // 👉 Mobile View
+        <Slider ref={mobileSliderRef} {...mobileSettings}>
+          {persons.map((p, idx) => (
+            <div key={idx} className="flex justify-center px-2">
+              {PersonCard(p, idx)}
+            </div>
           ))}
         </Slider>
-      </div>
+      ) : (
+        // 👉 Desktop/Tablet View
+        <div className="relative w-full max-w-6xl mx-auto">
+          <Slider ref={desktopSliderRef} {...desktopSettings}>
+            {persons.map((p, idx) => (
+              <div key={idx} className="flex justify-center px-2">
+                {PersonCard(p, idx)}
+              </div>
+            ))}
+          </Slider>
 
-      {/* External Buttons */}
-      <motion.div
-        id="btn"
-        className="flex justify-center gap-4 mt-10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <button
-          onClick={() => sliderRef.current.slickPrev()}
-          className="px-4 py-2 bg-gray-800 hover:bg-gray-700 cursor-pointer text-white rounded-lg flex items-center gap-2"
-        >
-          <ChevronLeft size={18} /> Prev
-        </button>
-        <button
-          onClick={() => sliderRef.current.slickNext()}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-500 cursor-pointer text-white rounded-lg flex items-center gap-2"
-        >
-          Next <ChevronRight size={18} />
-        </button>
-      </motion.div>
+          {/* Controls */}
+          <div className="flex justify-center gap-4 mt-8">
+            <button
+              onClick={() => desktopSliderRef.current.slickPrev()}
+              className="flex items-center gap-1 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg"
+            >
+              <ChevronLeft size={16} /> Prev
+            </button>
+            <button
+              onClick={() => desktopSliderRef.current.slickNext()}
+              className="flex items-center gap-1 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg"
+            >
+              Next <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      )}
 
-      {/* Tagline */}
-      <motion.h2
-        className="tagline"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        viewport={{ once: true }}
-      >
+      <h2 className="text-center mt-10 text-lg md:text-xl font-semibold text-[#0056b3]">
         From Dreams to Delivery Let's Begin.
-      </motion.h2>
-    </div>
+      </h2>
+    </section>
   );
 };
 

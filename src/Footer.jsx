@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import {
   FaFacebookF,
   FaTwitter,
@@ -6,95 +6,119 @@ import {
   FaYoutube,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowScroll(window.scrollY > 300);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
-    <footer className="bg-blue-900 text-white pt-10 pb-3">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 sm:gap-8 md:text-center">
-        {/* Company Info */}
-        <div>
+    <footer className="bg-gradient-to-t from-blue-900 to-blue-800 text-white relative overflow-hidden">
+      {/* Main Section */}
+      <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-4 gap-5 text-center md:text-left">
+        {/* Logo + About */}
+        <div className="md:col-span-2 flex flex-col items-center md:items-start">
           <img
             src="/logo.png"
             alt="Siddharth Group Logo"
-            className="h-12  mb-4 object-contain"
+            className="h-14 mb-4 object-contain"
           />
-          <p className="text-sm leading-relaxed">
-            S. No, AP81, 83, N Main Rd, near Hard Rock Cafe, Koregaon Park
-            Annexe, Mundhwa, Pune, Maharashtra 411036
+          <p className="text-sm md:text-base leading-relaxed text-gray-200 max-w-md">
+            Siddharth Group is committed to building trust and shaping the future
+            through excellence in Construction, Agriculture, Finance, Franchise,
+            Films, and Pharmaceuticals. We believe in growth that empowers communities.
           </p>
+        </div>
 
-          <div className="mt-4 space-y-2 text-sm">
-            <p className="flex md:justify-center justify-start items-center gap-2 flex-wrap">
-              <Mail size={16} /> sidharthgroups@gmail.com
+        {/* Services Links */}
+        <div>
+          <h3 className="font-semibold text-lg mb-3 text-blue-300">Our Services</h3>
+          <ul className="space-y-2 text-sm md:text-base">
+            <li>
+              <a href="/services/construction" className="hover:text-[#f59e0b] transition-colors">
+                Construction
+              </a>
+            </li>
+            <li>
+              <a href="/services/agriculture" className="hover:text-[#f59e0b] transition-colors">
+                Agriculture
+              </a>
+            </li>
+            <li>
+              <a href="https://finbridgeadvisor.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f59e0b] transition-colors">
+                Finance
+              </a>
+            </li>
+            <li>
+              <a href="https://mehtagroup.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#f59e0b] transition-colors">
+                Franchise
+              </a>
+            </li>
+            <li>
+              <a href="/services/films" className="hover:text-[#f59e0b] transition-colors">
+                Films
+              </a>
+            </li>
+            <li>
+              <a href="/pharmacy" className="hover:text-[#f59e0b] transition-colors">
+                Pharmaceuticals
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="font-semibold text-lg mb-3 text-blue-300">Contact Us</h3>
+          <div className="space-y-3 text-sm md:text-base">
+            <p className="flex items-center justify-center md:justify-start gap-2">
+              <MapPin size={16} /> Pune, Maharashtra, India
             </p>
-            <p className="flex md:justify-center justify-start items-center gap-2">
-              <Phone size={16} /> +91-88053608977
+            <p className="flex items-center justify-center md:justify-start gap-2">
+              <Mail size={16} />
+              <a href="mailto:sidharthgroups@gmail.com" className="hover:text-white transition-colors">
+                sidharthgroups@gmail.com
+              </a>
+            </p>
+            <p className="flex items-center justify-center md:justify-start gap-2">
+              <Phone size={16} />
+              <a href="tel:+9188053608977" className="hover:text-white transition-colors">
+                +91-88053608977
+              </a>
             </p>
           </div>
-        </div>
 
-        {/* Services */}
-        <div>
-          <h3 className="font-semibold mb-3 text-lg">Services</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Construction</li>
-            <li>Agriculture</li>
-            <li>Finance</li>
-            <li>Franchise</li>
-          </ul>
-        </div>
-
-        {/* About */}
-        <div>
-          <h3 className="font-semibold mb-3 text-lg">About Us</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Overview</li>
-            <li>Team</li>
-          </ul>
-        </div>
-
-        {/* Projects */}
-        <div>
-          <h3 className="font-semibold mb-3 text-lg">Projects</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Construction</li>
-            <li>Agriculture</li>
-            <li>Finance</li>
-            <li>Franchise</li>
-          </ul>
-        </div>
-
-        {/* Policies & Socials */}
-        <div>
-          <h3 className="font-semibold mb-3 text-lg">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="#" className="hover:underline">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">Terms & Conditions</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">Disclaimer</a>
-            </li>
-          </ul>
-
-          <div className="flex justify-center sm:justify-start gap-5 mt-6 text-lg">
-            <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="#" aria-label="Twitter"><FaTwitter /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" aria-label="YouTube"><FaYoutube /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+          {/* Social Links */}
+          <div className="flex justify-center md:justify-start gap-5 mt-5 text-xl">
+            <a href="https://facebook.com" aria-label="Facebook" className="hover:text-blue-400 transition-colors"><FaFacebookF /></a>
+            <a href="https://twitter.com" aria-label="Twitter" className="hover:text-blue-300 transition-colors"><FaTwitter /></a>
+            <a href="https://instagram.com" aria-label="Instagram" className="hover:text-pink-400 transition-colors"><FaInstagram /></a>
+            <a href="https://youtube.com" aria-label="YouTube" className="hover:text-red-500 transition-colors"><FaYoutube /></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" className="hover:text-blue-200 transition-colors"><FaLinkedinIn /></a>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-blue-700 mt-8 pt-4 text-center text-xs sm:text-sm px-4">
+      <div className="border-t border-blue-700 py-4 text-center text-xs sm:text-sm px-4 bg-blue-900/80">
         <p>
-          © 2025 Siddharth Group. All Rights Reserved.{" "}
-          <br className="sm:hidden" />
-          Company Registration No.: SG/IND/2020/4582
+          © {new Date().getFullYear()} Siddharth Group. All Rights Reserved. |{" "}
+          Website Developed by{" "}
+          <a
+            href="https://rahulparihar.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline font-semibold text-white hover:text-[#f59e0b]"
+          >
+            Rahul Parihar
+          </a>
         </p>
       </div>
     </footer>

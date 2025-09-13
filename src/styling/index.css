@@ -1,17 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #1a1f36;
+  --primary-color: #f9fafb;
   --secondary-color: #073675;
-  --ternary-color: #00b96d;
 }
 
-body {
-  /* background-color: var(--primary-color); */
-  color: #fff;
-  background-image: linear-gradient(#1A1F36,#151B35);
+body{
+  background-color: #f5f7ff;
+  
 }
-
 @layer base {
   .tagline {
     @apply md:text-4xl text-xl text-center text-amber-500;
@@ -53,7 +50,7 @@ body {
     animation: move-right 15s linear infinite ;
 }
 
-#left{
+.left{
     animation: move-left 15s linear infinite ;
 }
 
@@ -81,3 +78,4 @@ body {
 @theme{
   --font-oswald: 'Oswald', sans-serif;
 }
+

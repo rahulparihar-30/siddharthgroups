@@ -36,7 +36,7 @@ const Chat = () => {
     <div ref={chatRef}>
       {/* Main Bubble */}
       <div
-        className="chat-bubble fixed bottom-5 right-5 cursor-pointer"
+        className="cursor-pointer fixed bottom-6 right-6 p-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-110"
         onClick={handleClick}
       >
         {isExpanded ? <ExpandMoreIcon /> : <MessageCircle color="white" />}
@@ -47,13 +47,13 @@ const Chat = () => {
         <>
           <a
             href="tel:+918805360894"
-            className="w-[50px] h-[50px] cursor-pointer flex justify-center items-center bg-blue-600 text-center rounded-full fixed bottom-21 right-5"
+            className="cursor-pointer p-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-110 fixed bottom-21 right-5"
           >
             <CallIcon />
           </a>
           <a
             href="mailto:siddharthgroups@gmail.com"
-            className="w-[50px] h-[50px] cursor-pointer flex justify-center items-center bg-blue-700 text-center rounded-full fixed bottom-37 right-5"
+            className="cursor-pointer p-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-110 fixed bottom-21 right-5 fixed bottom-37 right-5"
           >
             <EmailIcon />
           </a>
