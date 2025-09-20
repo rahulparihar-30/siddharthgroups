@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -33,6 +33,7 @@
     "react-visibility-sensor": "^5.1.1",
     "single-spa-react": "^6.0.2",
     "slick-carousel": "^1.8.1",
+    "split-type": "^0.3.4",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {

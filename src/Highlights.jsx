@@ -39,9 +39,9 @@ export default function Highlights() {
   };
 
   return (
-    <section className="w-full flex items-center">
+    <section className="w-full flex items-center h-screen">
       <div className="max-w-6xl mx-auto md:py-20 px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-oswald font-bold mb-4 text-[#0056b3]">
+        <h2 className="text-5xl font-oswald font-bold mb-4 text-[#0056b3]">
           Our Achievements
         </h2>
 
@@ -52,7 +52,7 @@ export default function Highlights() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-20">
           {/* Years of Excellence */}
           <div ref={yearsRef}>
-            <h3 className="text-4xl md:text-8xl font-oswald text-[#ff9800] font-bold">
+            <h3 className="text-6xl md:text-8xl font-oswald text-[#ff9800] font-bold">
               {yearsVisible ? (
                 <CountUp end={25} duration={2} onEnd={() => checkAllFinished("years")} />
               ) : (
@@ -67,7 +67,7 @@ export default function Highlights() {
 
           {/* Industries Served */}
           <div ref={industriesRef}>
-            <h3 className="text-4xl md:text-8xl font-oswald text-[#ff9800] font-bold">
+            <h3 className="text-6xl md:text-8xl font-oswald text-[#ff9800] font-bold">
               {industriesVisible ? (
                 <CountUp end={6} duration={2} onEnd={() => checkAllFinished("industries")} />
               ) : (
@@ -82,7 +82,7 @@ export default function Highlights() {
 
           {/* Clients & Partners */}
           <div ref={clientsRef}>
-            <h3 className="text-4xl md:text-8xl font-oswald text-[#ff9800] font-bold">
+            <h3 className="text-6xl md:text-8xl font-oswald text-[#ff9800] font-bold">
               {clientsVisible ? (
                 <CountUp end={1000} duration={2} onEnd={() => checkAllFinished("clients")} />
               ) : (

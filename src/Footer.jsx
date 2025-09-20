@@ -22,15 +22,15 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-t from-blue-900 to-blue-800 text-white relative overflow-hidden">
       {/* Main Section */}
-      <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-4 gap-5 text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-5 text-left md:text-left">
         {/* Logo + About */}
-        <div className="md:col-span-2 flex flex-col items-center md:items-start">
+        <div className=" col-span-2 flex flex-col items-start">
           <img
             src="/logo.png"
             alt="Siddharth Group Logo"
             className="h-14 mb-4 object-contain"
           />
-          <p className="text-sm md:text-base leading-relaxed text-gray-200 max-w-md">
+          <p className="text-sm md:text-base text-left leading-relaxed text-gray-200 max-w-md">
             Siddharth Group is committed to building trust and shaping the future
             through excellence in Construction, Agriculture, Finance, Franchise,
             Films, and Pharmaceuticals. We believe in growth that empowers communities.
@@ -78,16 +78,16 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg mb-3 text-blue-300">Contact Us</h3>
           <div className="space-y-3 text-sm md:text-base">
-            <p className="flex items-center justify-center md:justify-start gap-2">
+            <p className="flex md:items-center  justify-start gap-2">
               <MapPin size={16} /> Pune, Maharashtra, India
             </p>
-            <p className="flex items-center justify-center md:justify-start gap-2">
+            <p className="flex justify-start gap-2">
               <Mail size={16} />
               <a href="mailto:sidharthgroups@gmail.com" className="hover:text-white transition-colors">
                 sidharthgroups@gmail.com
               </a>
             </p>
-            <p className="flex items-center justify-center md:justify-start gap-2">
+            <p className="flex justify-start gap-2">
               <Phone size={16} />
               <a href="tel:+9188053608977" className="hover:text-white transition-colors">
                 +91-88053608977
@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center md:justify-start gap-5 mt-5 text-xl">
+          <div className="flex justify-start gap-5 mt-5 text-xl">
             <a href="https://facebook.com" aria-label="Facebook" className="hover:text-blue-400 transition-colors"><FaFacebookF /></a>
             <a href="https://twitter.com" aria-label="Twitter" className="hover:text-blue-300 transition-colors"><FaTwitter /></a>
             <a href="https://instagram.com" aria-label="Instagram" className="hover:text-pink-400 transition-colors"><FaInstagram /></a>

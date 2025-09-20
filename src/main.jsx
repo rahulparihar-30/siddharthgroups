@@ -10,9 +10,9 @@ const router = createBrowserRouter([{
   path:"",
   element:<App/>,
 },{
-  path:"pharmacy",
+  path:"/pharmacy",
   element:<Pharmacy/>
-}
+},
 ])
 
 createRoot(document.getElementById('root')).render(

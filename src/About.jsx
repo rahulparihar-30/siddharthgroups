@@ -36,7 +36,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Heading */}
         <motion.h1
-          className="text-3xl md:text-5xl font-bold text-center text-[#0056b3] mb-6"
+          className="text-5xl font-bold text-center text-[#0056b3] mb-6"
           style={{ fontFamily: '"Oswald", "sans-serif"' }}
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}

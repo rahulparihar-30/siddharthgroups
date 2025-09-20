@@ -8,21 +8,21 @@ const Services = () => {
       name: "Construction",
       description:
         "From modern residences to large-scale commercial developments, we deliver structures that blend quality craftsmanship, innovative design, and uncompromising safety—built to inspire, empower, and endure.",
-      image: "/pexels-rezwan-1216589.jpg",
-      href: "/services/construction",
+      image: "pexels-rezwan-1216589.jpg",
+      href: "/services/sid-construction/",
     },
     {
       name: "Agriculture",
       description:
         "We enable sustainable farming through smart irrigation, precision inputs, and supply-chain support—helping growers boost yield, reduce costs, and protect the environment.",
-      image: "/pexels-jk04-2933243.jpg",
-      href: "/services/agriculture",
+      image: "pexels-jk04-2933243.jpg",
+      href: "/services/agriculture/",
     },
     {
       name: "Finance",
       description:
         "Flexible financing, project funding, and advisory solutions designed to accelerate growth while managing risk—transparent terms, quick processing, and trusted guidance.",
-      image: "/traxer-kM6QNrgo0YE-unsplash.jpg",
+      image: "traxer-kM6QNrgo0YE-unsplash.jpg",
       href: "https://finbridgeadvisor.com",
       external: true,
     },
@@ -30,18 +30,18 @@ const Services = () => {
       name: "Franchise",
       description:
         "A proven franchise model with training, branding, and operational playbooks—start faster, scale smarter, and grow with Siddharth Group’s ecosystem.",
-      image: "/background-images/Franchise.jpg",
+      image: "background-images/Franchise.jpg",
       href: "https://mehtagroup.in",
       external: true,
     },
     {
       name: "Films",
-      image: "/pexels-kyleloftusstudios-5642754.jpg",
-      href: "/services/films",
+      image: "pexels-kyleloftusstudios-5642754.jpg",
+      href: "/services/films/",
     },
     {
       name: "Pharmaceutical",
-      image: "/pexels-anntarazevich-5910953.jpg",
+      image: "pexels-anntarazevich-5910953.jpg",
       href: "/pharmacy",
     },
   ];
@@ -64,7 +64,7 @@ const Services = () => {
     >
       {/* Title */}
       <motion.h1
-        className="text-4xl md:text-6xl text-center text-[#0056b3] font-extrabold mb-6 tracking-tight"
+        className="text-5xl text-center text-[#0056b3] font-extrabold mb-6 tracking-tight"
         style={{ fontFamily: '"Oswald", sans-serif' }}
         initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
         whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
