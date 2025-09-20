@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import Home from "./Home";
 import Chat from "./Chat";
 import Navbar from "./Navbar";
-import "./styling/App.css";
 import Services from "./Services";
 import About from "./About";
 import Team from "./Team";
@@ -15,7 +14,6 @@ import Highlights from "./Highlights";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollSmoother from "gsap/ScrollSmoother"; // 👈 needs Club GreenSock file
-import GsapTeam from "./gsapTeam";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -71,7 +69,7 @@ function App() {
 
   return (
     <div id="smooth-wrapper">
-          <Navbar />
+      <Navbar />
       <div id="smooth-content">
         <main className="App">
           {/* Home */}
@@ -106,8 +104,7 @@ function App() {
           <Footer />
         </main>
       </div>
-          <Chat />
-
+      <Chat />
     </div>
   );
 }

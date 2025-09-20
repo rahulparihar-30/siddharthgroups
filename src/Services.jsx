@@ -9,14 +9,14 @@ const Services = () => {
       description:
         "From modern residences to large-scale commercial developments, we deliver structures that blend quality craftsmanship, innovative design, and uncompromising safety—built to inspire, empower, and endure.",
       image: "pexels-rezwan-1216589.jpg",
-      href: "/services/sid-construction/",
+      href: "https://sidharthgroup.in/services/sid-construction/",
     },
     {
       name: "Agriculture",
       description:
         "We enable sustainable farming through smart irrigation, precision inputs, and supply-chain support—helping growers boost yield, reduce costs, and protect the environment.",
       image: "pexels-jk04-2933243.jpg",
-      href: "/services/agriculture/",
+      href: "https://sidharthgroup.in/services/agriculture/",
     },
     {
       name: "Finance",
@@ -30,14 +30,14 @@ const Services = () => {
       name: "Franchise",
       description:
         "A proven franchise model with training, branding, and operational playbooks—start faster, scale smarter, and grow with Siddharth Group’s ecosystem.",
-      image: "background-images/Franchise.jpg",
+      image: "franchise.jpg",
       href: "https://mehtagroup.in",
       external: true,
     },
     {
       name: "Films",
       image: "pexels-kyleloftusstudios-5642754.jpg",
-      href: "/services/films/",
+      href: "https://sidharthgroup.in/services/films/",
     },
     {
       name: "Pharmaceutical",

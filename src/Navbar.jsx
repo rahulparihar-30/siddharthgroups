@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* Logo */}
         <a to="/" className="w-10 h-10 cursor-pointer">
             <img
-              src={`${import.meta.env.BASE_URL}logo.png`}
+              src={`/logo.png`}
               className="w-full h-full rounded"
               alt="Agritech Solutions"
             />
