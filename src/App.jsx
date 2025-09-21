@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Highlights from "./Highlights";
+import UnderConstruction from "./UnderConstruction";
 
 // 👉 Import GSAP
 import { gsap } from "gsap";
@@ -70,6 +71,7 @@ function App() {
   return (
     <div id="smooth-wrapper">
       <Navbar />
+      <UnderConstruction />
       <div id="smooth-content">
         <main className="App">
           {/* Home */}
