@@ -5,20 +5,12 @@ import { motion } from "framer-motion";
 import useMediaQuery from "./useMediaQuery";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { persons } from "./data";
 
 const Team = () => {
   const desktopSliderRef = useRef(null);
   const mobileSliderRef = useRef(null);
   const isMobile = useMediaQuery("(max-width: 767px)");
-
-  const persons = [
-    { name: "Lana Steiner", designation: "Chief Operating Officer", image: "team/p4.jpg" },
-    { name: "Mia Ward", designation: "Founder & CEO", image: "team/p2.jpg" },
-    { name: "Lana Ray", designation: "Co-founder", image: "team/p3.jpg" },
-    { name: "Justin Rose", designation: "Co-founder and CFO", image: "team/p1.jpg" },
-    { name: "Lana Steiner", designation: "Chief Operating Officer", image: "team/p4.jpg" },
-    { name: "Mia Ward", designation: "Founder & CEO", image: "team/p2.jpg" },
-  ];
 
   const PersonCard = (person, idx) => (
     <div
@@ -84,7 +76,7 @@ const Team = () => {
   };
 
   return (
-    <section className="py-5 px-4 md:px-12 lg:px-20 flex flex-col justify-center">
+    <section className="py-5 px-4 md:px-12 lg:px-20 flex flex-col justify-center" id="team">
       <h1 className="text-5xl text-center font-oswald font-bold text-[#0056b3] mb-4">
         Meet Our Team
       </h1>

@@ -53,7 +53,7 @@ const Home = () => {
       className="Home relative w-full 
       md:min-h-screen min-h-[90vh] 
       mt-15 md:mt-0 flex overflow-hidden items-center justify-center"
-      id="Home"
+      id="home"
     >
       {/* Background Video */}
       <video

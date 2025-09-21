@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -43,13 +44,13 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a to="/" className="w-10 h-10 cursor-pointer">
+        <NavLink to="/" className="w-10 h-10 cursor-pointer">
             <img
               src={`/logo.png`}
               className="w-full h-full rounded"
               alt="Agritech Solutions"
             />
-          </a>
+          </NavLink>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 text-white font-medium">

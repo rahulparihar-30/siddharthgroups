@@ -1,50 +1,9 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import { motion } from "framer-motion";
-
+import { services } from "./data";
 const Services = () => {
-  const services = [
-    {
-      name: "Construction",
-      description:
-        "From modern residences to large-scale commercial developments, we deliver structures that blend quality craftsmanship, innovative design, and uncompromising safety—built to inspire, empower, and endure.",
-      image: "pexels-rezwan-1216589.jpg",
-      href: "https://sidharthgroup.in/services/sid-construction/",
-    },
-    {
-      name: "Agriculture",
-      description:
-        "We enable sustainable farming through smart irrigation, precision inputs, and supply-chain support—helping growers boost yield, reduce costs, and protect the environment.",
-      image: "pexels-jk04-2933243.jpg",
-      href: "https://sidharthgroup.in/services/agriculture/",
-    },
-    {
-      name: "Finance",
-      description:
-        "Flexible financing, project funding, and advisory solutions designed to accelerate growth while managing risk—transparent terms, quick processing, and trusted guidance.",
-      image: "traxer-kM6QNrgo0YE-unsplash.jpg",
-      href: "https://finbridgeadvisor.com",
-      external: true,
-    },
-    {
-      name: "Franchise",
-      description:
-        "A proven franchise model with training, branding, and operational playbooks—start faster, scale smarter, and grow with Siddharth Group’s ecosystem.",
-      image: "franchise.jpg",
-      href: "https://mehtagroup.in",
-      external: true,
-    },
-    {
-      name: "Films",
-      image: "pexels-kyleloftusstudios-5642754.jpg",
-      href: "https://sidharthgroup.in/services/films/",
-    },
-    {
-      name: "Pharmaceutical",
-      image: "pexels-anntarazevich-5910953.jpg",
-      href: "/pharmacy",
-    },
-  ];
+
 
   // Variants
   const container = {

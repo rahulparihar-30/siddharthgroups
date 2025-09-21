@@ -7,14 +7,17 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { services } from "./data";
 
 export default function Footer() {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
+    console.log(services)
     const handleScroll = () => setShowScroll(window.scrollY > 300);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+    
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -41,36 +44,14 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg mb-3 text-blue-300">Our Services</h3>
           <ul className="space-y-2 text-sm md:text-base">
-            <li>
-              <a href="/services/construction" className="hover:text-[#f59e0b] transition-colors">
-                Construction
-              </a>
-            </li>
-            <li>
-              <a href="/services/agriculture" className="hover:text-[#f59e0b] transition-colors">
-                Agriculture
-              </a>
-            </li>
-            <li>
-              <a href="https://finbridgeadvisor.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f59e0b] transition-colors">
-                Finance
-              </a>
-            </li>
-            <li>
-              <a href="https://mehtagroup.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#f59e0b] transition-colors">
-                Franchise
-              </a>
-            </li>
-            <li>
-              <a href="/services/films" className="hover:text-[#f59e0b] transition-colors">
-                Films
-              </a>
-            </li>
-            <li>
-              <a href="/pharmacy" className="hover:text-[#f59e0b] transition-colors">
-                Pharmaceuticals
-              </a>
-            </li>
+            {
+              services.map((service, index) => (
+                <li key={index}>
+                  <a href={service.href} className="hover:text-[#f59e0b] transition-colors">
+                    {service.name}
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
 
